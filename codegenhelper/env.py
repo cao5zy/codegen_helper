@@ -18,3 +18,8 @@ def put_folder(name, parent = None):
 def put_file(name, parent = None, content = None):
     with open(compose_dir(parent, name), 'w') as file:
                        file.write(content)
+
+def remove_file_exists(path):
+    if os.path.exists(path):
+        os.remove(path)
+    return path
