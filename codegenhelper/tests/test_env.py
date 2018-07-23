@@ -1,5 +1,5 @@
 from nose import with_setup
-from codegenhelper import put_folder, remove, put_file, compose_dir, remove_file_if_exists
+from codegenhelper import put_folder, remove, put_file, compose_dir, remove_file_if_exists, create_folder_if_not_exists, write_file
 from assertpy import assert_that
 import os
 
@@ -24,3 +24,12 @@ def setup_test_remove_file_if_exists():
 @with_setup(setup_test_remove_file_if_exists, clear_env)    
 def test_remove_file_if_exists():
     assert_that(os.path.exists(remove_file_if_exists(existed_file))).is_false()
+
+file_path = os.path.join(root,  "./folder1/folder2/test.txt")
+
+def setup_test_create_folder_if_not_exists():
+    put_folder("./test")
+
+@with_setup(setup_test_create_folder_if_not_exists, clear_env)
+def test_create_folder_if_not_exists():
+    assert_that(os.path.exists(write_file(create_folder_if_not_exists(file_path), "test"))).is_true()
