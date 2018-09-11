@@ -1,6 +1,15 @@
 import os
 import shutil
 
+def test_root():
+    return ".test"
+
+def init_test_folder():
+    put_folder(test_root())
+
+def rmove_test_folder():
+    remove(test_root())
+    
 def compose_dir(parent, name):
     return os.path.join(parent or os.getcwd(), name)
 
