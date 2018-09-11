@@ -7,7 +7,7 @@ def test_root():
 def init_test_folder():
     put_folder(test_root())
 
-def rmove_test_folder():
+def remove_test_folder():
     remove(test_root())
     
 def compose_dir(parent, name):
