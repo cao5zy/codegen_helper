@@ -1,1 +1,6 @@
 dist
+codegen_helper.egg-info
+codegenhelper.egg-info
+codegenhelper/__pycache__/
+codegenhelper/test/
+codegenhelper/tests/__pycache__/
