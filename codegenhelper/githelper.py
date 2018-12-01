@@ -1,5 +1,6 @@
 from .log import log
 import os
+import subprocess
 
 def get_tag(giturl, tag, location = os.getcwd(), ssh_key = None):
     def tag_cmd():
