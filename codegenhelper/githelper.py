@@ -1,6 +1,7 @@
 from .log import log
 import os
 import subprocess
+import re
 
 def get_tag(giturl, tag, location = os.getcwd(), ssh_key = None):
     def tag_cmd():
@@ -14,4 +15,8 @@ def get_tag(giturl, tag, location = os.getcwd(), ssh_key = None):
         return "git clone --single-branch --depth 1 %s" % giturl
 
     subprocess.call(log(__name__)("git cmd").debug(" ".join([key_cmd(), git_cmd(), tag_cmd()])), shell=True, cwd=location)
+
+    def get_target_folder_path():
+        return os.path.join(location, re.search('''([\w\_\-\d]+)\.git''', giturl).group(1))
     
+    return get_target_folder_path()

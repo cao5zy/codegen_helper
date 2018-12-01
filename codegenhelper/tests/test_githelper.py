@@ -12,6 +12,7 @@ def setup_folder():
 
 @with_setup(setup_folder, remove_test_folder)
 def test_get_tag():
-    get_tag("git@github.com:cao5zy/testrepo.git", "v0.0.1", test_root())
+    ret =  get_tag("git@github.com:cao5zy/testrepo.git", "v0.0.1", test_root())
     assert_that(os.path.join(test_root(),"testrepo", "README.md")).exists()
+    assert_that(os.path.abspath(ret)).is_equal_to(os.path.abspath(os.path.join(test_root(), "testrepo")))
         
