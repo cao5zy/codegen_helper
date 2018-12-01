@@ -6,7 +6,7 @@ requires = [],
 
 setup(
     name = name,
-    version = '0.0.15.1',
+    version = '0.0.15.2',
     author = 'Zongying Cao',
     author_email = 'zongying.cao@dxc.com',
     description = 'utilities for code-engine.',
