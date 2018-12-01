@@ -1,5 +1,5 @@
 from nose import with_setup
-from codegenhelper import put_folder, remove, put_file, compose_dir, remove_file_if_exists, create_folder_if_not_exists, write_file
+from ..env import put_folder, remove, put_file, compose_dir, remove_file_if_exists, create_folder_if_not_exists, write_file
 from assertpy import assert_that
 import os
 
